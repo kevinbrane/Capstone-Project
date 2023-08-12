@@ -1,0 +1,28 @@
+.portfolio-container {
+    margin-top: 25px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.portfolio-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    color: #26c17e;
+}
+
+.portfolio-cards-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.portfolio-item-container {
+    width: 308px;
+    height: 190px;
+}
+
+.portfolio-item-container > img {
+    width: 308px;
+    height: 190px;
+}
