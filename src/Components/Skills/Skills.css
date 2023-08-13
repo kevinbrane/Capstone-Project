@@ -10,3 +10,23 @@
     font-family: 'Open Sans', sans-serif;
     color: #26c17e;
 }
+
+.scale {
+    width: 100%;
+    height: 10px;
+}
+
+.scale-container {
+    position: relative;
+}
+
+.scale-container span {
+    position: absolute;
+  white-space: nowrap;
+  bottom: -15px;
+}
+
+.scale-container span:nth-child(2) { left: 0%; }    /* Begginer */
+.scale-container span:nth-child(3) { left: 19%; }   /* Proficient */
+.scale-container span:nth-child(4) { left: 78%; }   /* Expert */
+.scale-container span:nth-child(5) { left: 100%; transform: translateX(-100%); } /* Master - Para que se alinee por la derecha */

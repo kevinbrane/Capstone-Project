@@ -1,37 +1,30 @@
-import './Experience.css'
+import React, {forwardRef} from "react";
+import { experienceData } from "../../utils/constants";
+import "./Experience.css";
 
-export default function Experience() {
+const Experience :React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
   return (
-    <div className='experience-container'>
-        <div>
-            <h1 className='experience-title'>Experience</h1>
-        </div>
-        <div>
-            <div>
-                <div>
-                    <div>
-                        <span>Google</span>
-                        <span>2018 - 2020</span>
-                    </div>
-                    <div>
-                        <span>Google</span>
-                        <span>2018 - 2020</span>
-                    </div>
-                </div>
-                <div>
-                    <h3>Frontend Developer / Javascript programmer</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringil
-                    </p>
-                </div>
-                <div>
-                    <h3>Frontend Developer / Javascript programmer</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringil
-                    </p>
-                </div>
+    <div className="experience-container" ref={ref} >
+      <div>
+        <h1 className="experience-title">Experience</h1>
+      </div>
+      {experienceData.map((exp) => (
+        <div key={exp.id}>
+          <div className="experience-info-container">
+            <div className="company-date-container">
+              <span>{exp.info.company}</span>
+              <span>{exp.date}</span>
             </div>
+            <div>
+              <h3>{exp.info.job}</h3>
+              <p>{exp.info.description}</p>
+            </div>
+          </div>
         </div>
+      ))}
     </div>
-  )
+  );
 }
+
+const ForwardedExperience = forwardRef(Experience);
+export default ForwardedExperience;

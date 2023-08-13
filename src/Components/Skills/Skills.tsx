@@ -1,16 +1,22 @@
+import React, {forwardRef} from 'react';
 import './Skills.css'
 
-export default function Skills() {
+const Skills:React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
   return (
-    <div className='skills-container'>
+    <div className='skills-container' ref={ref}>
       <div>
         <h1 className='skills-title'>Skills</h1>
       </div>
       <div>
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
+        <span>HTML</span>
+      </div>
+      <div className='scale-container'>
+        <img src="../../public/skills/scale.png" alt="" className='scale' />
+        <span>Begginer</span><span>Proficient</span><span>Expert</span><span>Master</span>
       </div>
     </div>
   )
 }
+
+const ForwardedSkills = forwardRef(Skills);
+export default ForwardedSkills;

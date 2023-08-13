@@ -1,4 +1,8 @@
-.menu-btn-container {
+.goUp-btn-container {
+    position: fixed;
+    bottom: 0;
+    left: 94%;
+    z-index: 10;
     background-color: #222935;
     display: flex;
     align-items: center;
@@ -7,8 +11,7 @@
     height: 30px;
     cursor: pointer;
     transition: all 1s;
-    margin-top: auto;
-    border-top-right-radius: 5px; 
-    border-bottom-right-radius: 5px; 
+    margin-top: auto; 
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
-

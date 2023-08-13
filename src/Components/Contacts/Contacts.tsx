@@ -1,8 +1,9 @@
+import React, { forwardRef } from 'react'
 import './Contacts.css'
 
-export default function Contacts() {
+const Contacts:React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
   return (
-    <div>
+    <div className='contacts-container' ref={ref} >
         <div>
             <h1 className='contacts-title'>Contacts</h1>
         </div>
@@ -36,3 +37,7 @@ export default function Contacts() {
     </div>
   )
 }
+
+
+const ForwardedContacts = forwardRef(Contacts);
+export default ForwardedContacts;
