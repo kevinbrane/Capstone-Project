@@ -60,16 +60,19 @@ export default function SideBar({ scrollToRef, refs }: SideBarProps) {
       </ul>
       <div className="goback-container">
         <Link className="go-back-link" to="/">
-          <div className="go-back-1">
-            <img src="../../public/SideBar/Vector.png" alt="icon to go back" />
-          </div>
-          <div className="go-back-2">
+          <button className="go-back-1">
+            <img
+              src="../../public/SideBar/Vector.png"
+              alt="icon to go back"
+            />
+            Go back
+          </button>
+          <button className="go-back-2">
             <img
               src="../../public/SideBar/Go back_2.png"
               alt="icon to go back"
             />
-            <span>Go back</span>
-          </div>
+          </button>
         </Link>
       </div>
     </nav>

@@ -11,29 +11,109 @@
     color: #26c17e;
 }
 
+.portfolio-to-search-container > span {
+    color: #26c17e;
+}
+
+.portfolio-to-search-container > .active {
+    color: black;
+}
+
 .portfolio-cards-container {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
 }
 
+.portfolio-to-search-container {
+    display: flex;
+    gap: 3px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.portfolio-to-search-container > button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    color: #26c17e;
+}
+
 .portfolio-item-container {
     max-width: 308px;
     height: 190px;
-    border: #b2b6bbab 1px solid;
 }
 
-.portfolio-item-container > h4 {
+.portfolio-item-text-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 308px;
+    height: 190px;
+    border: #b2b6bbab 1px solid;
+    padding:15px ;
+    background-color: #efececab;
+}
+
+.portfolio-item-text-container > h4 {
     color: #26c17e;
     font-family: open sans;
     font-weight: 700;
     font-size: 16px;
 }
 
+
+.view-resource {
+    font-family: open sans;
+    font-weight: 400;
+    font-size: 14px;
+    color: #26c17e;
+}
+
 .portfolio-item-container > img {
     width: 100%;
     height: 190px;
 }
+
+.hidden {
+    display: none;
+}
+
+.fade-out {
+    animation-name: fadeOutShrink;
+    animation-duration: 0.7s; /* Ajustado para hacer la animación un poco más lenta */
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOutShrink {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+/* Animación de aparición desde la derecha */
+.fade-in-from-right {
+    opacity: 0;
+    transform: translateX(100%);
+    animation-name: fadeInFromRightAnimation;
+    animation-duration: 0.5s; /* Puedes ajustar esta duración según tu preferencia */
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInFromRightAnimation {
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+
 
 
 

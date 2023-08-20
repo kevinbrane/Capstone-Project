@@ -83,11 +83,26 @@
 }
 
 .go-back-1 {
-    display: block;
+    display: flex;
+    border: none;
+    padding: 5px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.go-back-1:hover {
+    background-color: #26C17E;
+    border-radius: 5px;
 }
 
 .go-back-2 {
     display: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .go-back-link {
@@ -98,10 +113,6 @@
   cursor: pointer;
   text-decoration: none;
   transition: background-color 1s; 
-}
-
-.go-back-link:hover {
-    background-color:  #26C17E; 
 }
 
 @media (max-width: 600px) {
