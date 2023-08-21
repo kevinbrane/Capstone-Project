@@ -1,14 +1,8 @@
 import React, { forwardRef } from "react";
+import { skillData } from "../../utils/constants";
 import "./Skills.css";
 
 const Skills: React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
-  const skillData = [
-    { name: "HTML", percentage: "85%" },
-    { name: "CSS", percentage: "80%" },
-    { name: "Javascript", percentage: "50%" },
-    { name: "React", percentage: "70%" },
-    { name: "Typescript", percentage: "25%" },
-  ];
 
   return (
     <div className="skills-container" ref={ref}>
