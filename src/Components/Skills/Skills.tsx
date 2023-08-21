@@ -11,7 +11,7 @@ const Skills:React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
         <span>HTML</span>
       </div>
       <div className='scale-container'>
-        <img src="../../public/skills/scale.png" alt="" className='scale' />
+        <img src="../src/assets/skills/scale.png" alt="" className='scale' />
         <span>Begginer</span><span>Proficient</span><span>Expert</span><span>Master</span>
       </div>
     </div>

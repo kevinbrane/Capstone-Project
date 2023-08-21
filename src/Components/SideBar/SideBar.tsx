@@ -20,41 +20,41 @@ export default function SideBar({ scrollToRef, refs }: SideBarProps) {
       <div className="user-container">
         <img
           className="user-profile-photo"
-          src="../../public/SideBar/profile-photo.png"
+          src="../src/assets/SideBar/profile-photo.png"
           alt="an image about me"
         />
         <h4>Kevin Bran</h4>
       </div>
       <ul>
         <div onClick={() => scrollToRef(refs.aboutMe)}>
-          <img src="../../public/SideBar/Aboutme.png" alt="about me icon" />
+          <img src="../src/assets/SideBar/Aboutme.png" alt="about me icon" />
           <li>About me</li>
         </div>
         <div onClick={() => scrollToRef(refs.education)}>
-          <img src="../../public/SideBar/Education.png" alt="education icon" />
+          <img src="../src/assets/SideBar/Education.png" alt="education icon" />
           <li>Education</li>
         </div>
         <div onClick={() => scrollToRef(refs.experience)}>
           <img
-            src="../../public/SideBar/Experience.png"
+            src="../src/assets/SideBar/Experience.png"
             alt="experience icon"
           />
           <li>Experience</li>
         </div>
         <div onClick={() => scrollToRef(refs.skills)}>
-          <img src="../../public/SideBar/Skills.png" alt="skills icon" />
+          <img src="../src/assets/SideBar/Skills.png" alt="skills icon" />
           <li>Skills</li>
         </div>
         <div onClick={() => scrollToRef(refs.portfolio)}>
-          <img src="../../public/SideBar/Portfolio.png" alt="portfolio icon" />
+          <img src="../src/assets/SideBar/Portfolio.png" alt="portfolio icon" />
           <li>Portfolio</li>
         </div>
         <div onClick={() => scrollToRef(refs.contacts)}>
-          <img src="../../public/SideBar/Contacts.png" alt="contacts icon" />
+          <img src="../src/assets/SideBar/Contacts.png" alt="contacts icon" />
           <li>Contacts</li>
         </div>
         <div onClick={() => scrollToRef(refs.feedbacks)}>
-          <img src="../../public/SideBar/Feedbacks.png" alt="feedback icon" />
+          <img src="../src/assets/SideBar/Feedbacks.png" alt="feedback icon" />
           <li>Feedback</li>
         </div>
       </ul>
@@ -62,14 +62,14 @@ export default function SideBar({ scrollToRef, refs }: SideBarProps) {
         <Link className="go-back-link" to="/">
           <button className="go-back-1">
             <img
-              src="../../public/SideBar/Vector.png"
+              src="../src/assets/SideBar/Vector.png"
               alt="icon to go back"
             />
             Go back
           </button>
           <button className="go-back-2">
             <img
-              src="../../public/SideBar/Go back_2.png"
+              src="../src/assets/SideBar/Go back_2.png"
               alt="icon to go back"
             />
           </button>

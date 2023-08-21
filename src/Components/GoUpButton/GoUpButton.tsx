@@ -11,7 +11,7 @@ export default function GoUpButton() {
 
   return (
     <div onClick={handleGoUpClick} className='goUp-btn-container'>
-        <img src="../../public/GoUpButton/next.png" alt="" />
+        <img src="../src/assets/GoUpButton/next.png" alt="" />
     </div>
   )
 }

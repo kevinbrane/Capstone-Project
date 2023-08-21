@@ -1,4 +1,5 @@
 import React, { forwardRef } from "react";
+import { Link } from "react-router-dom";
 import "./Contacts.css";
 
 const Contacts: React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
@@ -7,28 +8,46 @@ const Contacts: React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
       <div>
         <h1 className="contacts-title">Contacts</h1>
       </div>
-      <div>
+      <div className="contacts-info">
         <div>
-          <img src="" alt="" />
-          <span>+573016666049</span>
-        </div>
-        <div>
-          <img src="" alt="" />
-          <span>Kevin_bran@epam.com</span>
+          <div>
+            <img
+              src="../src/assets/Contacts/clarity_phone-handset-solid.png"
+              alt=""
+            />
+          </div>
+          <div>
+            <a className="contact-link" href="tel:+573016666049">+573016666049</a>
+          </div>
         </div>
         <div>
           <div>
-            <img src="" alt="" />
+            <img src="../src/assets/Contacts/email.png" alt="" />
           </div>
-          <span>Twitter</span>
-          <p>https://twitter.com/wordpress</p>
+          <div>
+            <a className="contact-link" href="mailto:Kevin_bran@epam.com">Kevin_bran@epam.com</a>
+          </div>
         </div>
         <div>
           <div>
-            <img src="" alt="" />
+            <img
+              src="../src/assets/Contacts/akar-icons_twitter-fill.png"
+              alt=""
+            />
           </div>
-          <span>Facebook</span>
-          <p>https://www.facebook.com/facebook</p>
+          <div>
+            <span>Twitter</span>
+            <Link className="link" to="">https://twitter.com/wordpress</Link>
+          </div>
+        </div>
+        <div>
+          <div>
+            <img className="fb" src="../src/assets/Contacts/Vector.png" alt="" />
+          </div>
+          <div>
+            <span>Facebook</span>
+            <Link className="link" to="">https://www.facebook.com/facebook</Link>
+          </div>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 .project-background{
-    background-image: url('../../public/StartPage/background.png');
+    background-image: url('../src/assets/StartPage/background.png');
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;

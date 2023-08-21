@@ -7,7 +7,7 @@ interface MenuButtonProps {
 export default function MenuButton({toggleSideBar}: MenuButtonProps) {
   return (
     <div onClick={toggleSideBar} className='menu-btn-container'>
-        <img src="../../public/MenuButton/Vector.png" alt="" />
+        <img src="../src/assets/MenuButton/Vector.png" alt="" />
     </div>
   )
 }

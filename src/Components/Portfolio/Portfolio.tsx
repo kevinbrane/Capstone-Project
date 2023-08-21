@@ -55,7 +55,7 @@ const Portfolio: React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
             </div>
             <div className="portfolio-cards-container">
                 <div className={`portfolio-item-container Code`}>
-                    <img src="../../public/Portfolio/Portfolio cards.png" alt="" />
+                    <img src="../src/assets/Portfolio/Portfolio cards.png" alt="" />
                     <div className="portfolio-item-text-container">
                         <h4>Some text</h4>
                         <p>Donec pede justo...</p>
@@ -63,7 +63,7 @@ const Portfolio: React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
                     </div>
                 </div>
                 <div className={`portfolio-item-container UI`}>
-                    <img src="../../public/Portfolio/card_3@2x.png" alt="" />
+                    <img src="../src/assets/Portfolio/card_3@2x.png" alt="" />
                     <div className="portfolio-item-text-container">
                         <h4>Some text</h4>
                         <p>Donec pede justo...</p>
@@ -71,7 +71,7 @@ const Portfolio: React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
                     </div>
                 </div>
                 <div className={`portfolio-item-container Code`}>
-                    <img src="../../public/Portfolio/Portfolio cards.png" alt="" />
+                    <img src="../src/assets/Portfolio/Portfolio cards.png" alt="" />
                     <div className="portfolio-item-text-container">
                         <h4>Some text</h4>
                         <p>Donec pede justo...</p>
@@ -79,7 +79,7 @@ const Portfolio: React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
                     </div>
                 </div>
                 <div className={`portfolio-item-container UI`}>
-                    <img src="../../public/Portfolio/card_3@2x.png" alt="" />
+                    <img src="../src/assets/Portfolio/card_3@2x.png" alt="" />
                     <div className="portfolio-item-text-container">
                         <h4>Some text</h4>
                         <p>Donec pede justo...</p>

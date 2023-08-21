@@ -10,3 +10,45 @@
     font-family: 'Open Sans', sans-serif;
     color: #26c17e;
 }
+
+.contacts-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contacts-info > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contacts-info > div > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-link{
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+}
+
+.contacts-info > div > div > span{
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+.link {
+    font-size: 14px;
+    text-decoration: none;
+    color: #6f6d6d;
+    cursor: pointer;
+}
+
+.fb{
+    margin: 8px;
+}
