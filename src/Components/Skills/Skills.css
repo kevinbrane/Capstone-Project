@@ -2,6 +2,9 @@
     margin-top: 25px;
     margin-left: 30px;
     margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Espacio entre cada habilidad */
 }
 
 .skills-title {
@@ -11,22 +14,78 @@
     color: #26c17e;
 }
 
+.skill-bar {
+    height: 29px; 
+    background-color: #e0e0e0; /* Color de fondo claro */
+    overflow: hidden; /* Esconde cualquier barra que pueda exceder el contenedor */
+    display: flex; 
+    align-items: center;
+    justify-items: center;
+}
+
+.skill-level {
+    height: 100%; 
+    background-color: #26c17e; /* Color de la barra de habilidad */
+}
+
+.skill-name {
+    z-index: 1; 
+    position: absolute; /* Posiciona el nombre encima de la barra */
+    color: white;
+    padding-left: 10px;
+    padding-top: 5px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
 .scale {
     width: 100%;
     height: 10px;
+    margin-top: 10px; /* Espacio entre las habilidades y la escala */
 }
 
 .scale-container {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.scale-container span {
+.scale-container img.scale {
+    width: 100%;
+    height: 10px;
+}
+
+.scale-container > div {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.scale-container > div > span {
     position: absolute;
-  white-space: nowrap;
-  bottom: -15px;
+    transform: translateX(-50%); 
+    white-space: nowrap; 
+    font-size: 11px;
+    font-family: sans-serif;
+    color: #667081;
 }
 
-.scale-container span:nth-child(2) { left: 0%; }    /* Begginer */
-.scale-container span:nth-child(3) { left: 19%; }   /* Proficient */
-.scale-container span:nth-child(4) { left: 78%; }   /* Expert */
-.scale-container span:nth-child(5) { left: 100%; transform: translateX(-100%); } /* Master - Para que se alinee por la derecha */
+.scale-container > div > span:nth-child(1) { 
+    left: 0%; 
+    transform: translateX(0%); 
+}
+
+.scale-container > div > span:nth-child(2) { 
+    left: 22%; 
+}
+
+.scale-container > div > span:nth-child(3) { 
+    left: 80%; 
+}
+
+.scale-container > div > span:nth-child(4) { 
+    left: 100%; 
+    transform: translateX(-100%); 
+}
