@@ -27,6 +27,8 @@ const experienceData = [
   },
 ];
 
+/* const portfolioData = []; */
+
 const educationData = [
   {
     id: 0,

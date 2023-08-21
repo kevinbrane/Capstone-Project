@@ -2,8 +2,6 @@ import React, {forwardRef} from 'react';
 import { aboutMeData } from '../../utils/constants';
 import './AboutMe.css';
 
-
-//Con el guión bajo de la siguiente línea estoy indicando a typescript que 'props' será un parametro no utilizado y corregir su advertencia.
 const AboutMe: React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
   return (
     <div className='about-me-container' ref={ref}>
