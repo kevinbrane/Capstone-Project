@@ -54,7 +54,7 @@
 .theme-slider {
     position: fixed;
     top: 22px;
-    right: 10px;
+    right: 20px;
     z-index: 20;
     display: flex;
     flex-direction: column;
