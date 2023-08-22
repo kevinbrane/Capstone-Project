@@ -164,4 +164,21 @@
   .go-back-2 {
     display: block;
   }
+
+  .side-bar .photo-box {
+    display: flex;
+    flex-direction: column;
+    width: 54px;
+    height: auto;
+    margin-top: 20px;
+
+    .photo-box-name {
+      display: none;
+    }
+
+    .photo-box-avatar {
+      width: 40px;
+      height: 40px;
+    }
+  }
 }

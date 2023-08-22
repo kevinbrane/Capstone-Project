@@ -1,3 +1,4 @@
+import PhotoBox from "../PhotoBox/PhotoBox";
 import Button from "../Button/Button";
 import "./SideBar.scss";
 
@@ -18,12 +19,7 @@ export default function SideBar({ scrollToRef, refs }: SideBarProps) {
   return (
     <nav className="side-bar">
       <div className="user-container">
-        <img
-          className="user-profile-photo"
-          src="../src/assets/SideBar/profile-photo.png"
-          alt="an image about me"
-        />
-        <h4>Kevin Bran</h4>
+        <PhotoBox simple/>
       </div>
       <ul>
         <div onClick={() => scrollToRef(refs.aboutMe)}>

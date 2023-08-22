@@ -1,22 +1,19 @@
 import Button from "../../Components/Button/Button";
+import PhotoBox from "../../Components/PhotoBox/PhotoBox";
+import { photoBoxData } from '../../utils/constants'; // Importa photoBoxData aquí
 import "./StartPage.scss";
-
 
 export default function StartPage() {
   return (
     <div className="project-background">
       <div className="card-container">
-        <img
-          className="profile-photo"
-          src="../src/assets/StartPage/profile-photo.png"
-          alt="profile-foto"
+        <PhotoBox 
+          avatar={photoBoxData.avatar}
+          name={photoBoxData.name}
+          title={photoBoxData.title}
+          description={photoBoxData.description}
+          size="medium"
         />
-        <h1 className="name-title">Kevin Bran</h1>
-        <h4>Software Engineer. Creative. Innovator</h4>
-        <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-        </p>
         <Button text="Know more" linkTo="/inner" variant="primary" />
       </div>
     </div>
