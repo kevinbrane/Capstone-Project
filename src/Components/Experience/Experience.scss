@@ -1,0 +1,42 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.experience-container {
+    @include container-styles;
+}
+
+.experience-title {
+    @include title-styles;
+}
+
+.experience-info-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+}
+
+.company {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.exp-date {
+    font-family: Body / norm_2;
+    color: #667081;
+    font-weight: 400;
+    font-size: 12.5px;
+}   
+
+.exp-info {
+    font-size: 14px;
+    color: #222935;
+}
+
+.company-date-container {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 43px;
+    gap: 5px;
+}

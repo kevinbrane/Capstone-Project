@@ -1,7 +1,7 @@
 import React, { useState, useEffect, forwardRef } from "react";
 import { Link } from "react-router-dom";
 import Isotope from "isotope-layout";
-import "./Portfolio.css";
+import "./Portfolio.scss";
 
 const Portfolio: React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
     const [activeButton, setActiveButton] = useState<string>("All");

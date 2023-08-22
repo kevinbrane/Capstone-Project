@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import { Link } from 'react-router-dom'
-import './Feedbacks.css'
+import './Feedbacks.scss'
 
 const Feedbacks: React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
   return (

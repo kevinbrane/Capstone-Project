@@ -1,6 +1,6 @@
 import React, {forwardRef} from 'react';
 import { aboutMeData } from '../../utils/constants';
-import './AboutMe.css';
+import './AboutMe.scss';
 
 const AboutMe: React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
   return (

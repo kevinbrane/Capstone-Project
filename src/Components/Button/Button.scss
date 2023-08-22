@@ -1,0 +1,67 @@
+.custom-button {
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  &.primary {
+    background-color: #222935;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #1e9e6a;
+    }
+  }
+
+  &.secondary {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    border: 1px solid #ccc;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #e0e0e0;
+    }
+  }
+
+  &.goBack1 {
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    gap: 5px;
+    transition: background-color 1s;
+    padding: 5px;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #26c17e;
+      border-radius: 5px;
+    }
+  }
+
+  &.goBack2 {
+    display: none;
+    border: none;
+    background-color: transparent;
+  }
+}
+
+@media (max-width: 600px) {
+  .custom-button {
+    &.goBack1 {
+      display: none;
+    }
+
+    &.goBack2 {
+      display: flex;
+    }
+  }
+}

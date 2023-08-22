@@ -1,4 +1,4 @@
-import './GoUpButton.css'
+import './GoUpButton.scss'
 
 export default function GoUpButton() {
 

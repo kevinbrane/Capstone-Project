@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import { educationData } from "../../utils/constants";
-import "./Education.css";
+import "./Education.scss";
 
 const Education: React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
   return (

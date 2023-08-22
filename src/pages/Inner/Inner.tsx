@@ -9,7 +9,7 @@ import Portfolio from "../../Components/Portfolio/Portfolio";
 import Contacts from "../../Components/Contacts/Contacts";
 import Feedbacks from "../../Components/Feedbacks/Feedbacks";
 import GoUpButton from "../../Components/GoUpButton/GoUpButton";
-import "./Inner.css";
+import "./Inner.scss";
 
 export default function Inner() {
   const aboutMeRef = useRef(null);

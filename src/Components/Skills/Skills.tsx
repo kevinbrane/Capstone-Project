@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import { skillData } from "../../utils/constants";
-import "./Skills.css";
+import "./Skills.scss";
 
 const Skills: React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
 

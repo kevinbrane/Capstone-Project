@@ -1,4 +1,4 @@
-import './MenuButton.css';
+import './MenuButton.scss';
 
 interface MenuButtonProps {
   toggleSideBar: () => void;

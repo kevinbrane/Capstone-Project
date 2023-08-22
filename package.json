@@ -15,12 +15,12 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.15.0",
-    "sass": "^1.65.1"
+    "sass": "^1.66.1"
   },
   "devDependencies": {
+    "@types/isotope-layout": "^3.0.6",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
-    "@types/isotope-layout": "^3.0.6",	
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react-swc": "^3.3.2",

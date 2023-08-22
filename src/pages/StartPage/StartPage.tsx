@@ -1,5 +1,5 @@
 import Button from "../../Components/Button/Button";
-import "./StartPage.css";
+import "./StartPage.scss";
 
 
 export default function StartPage() {

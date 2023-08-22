@@ -1,6 +1,6 @@
 import React, {forwardRef} from "react";
 import { experienceData } from "../../utils/constants";
-import "./Experience.css";
+import "./Experience.scss";
 
 const Experience :React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
   return (
@@ -12,12 +12,12 @@ const Experience :React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
         <div key={exp.id}>
           <div className="experience-info-container">
             <div className="company-date-container">
-              <span>{exp.info.company}</span>
-              <span>{exp.date}</span>
+              <span className="company">{exp.info.company}</span>
+              <span className="exp-date">{exp.date}</span>
             </div>
             <div>
               <h3>{exp.info.job}</h3>
-              <p>{exp.info.description}</p>
+              <p className="exp-info" >{exp.info.description}</p>
             </div>
           </div>
         </div>

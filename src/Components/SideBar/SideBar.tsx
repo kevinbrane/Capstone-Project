@@ -1,5 +1,5 @@
 import Button from "../Button/Button";
-import "./SideBar.css";
+import "./SideBar.scss";
 
 interface SideBarProps {
   scrollToRef: (ref: React.RefObject<HTMLDivElement>) => void;

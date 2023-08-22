@@ -1,0 +1,14 @@
+@import 'variables';
+
+@mixin container-styles {
+    margin-top: $primary-margin-top;
+    margin-left: $primary-margin-left;
+    margin-right: $primary-margin-right;
+}
+
+@mixin title-styles {
+    margin-top: $title-margin-top;
+    margin-bottom: $title-margin-bottom;
+    font-family: $title-font-family;
+    color: $title-color;
+}

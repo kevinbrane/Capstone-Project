@@ -1,0 +1,10 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.about-me-container {
+    @include container-styles;
+}
+
+.about-me-title {
+    @include title-styles;
+}
