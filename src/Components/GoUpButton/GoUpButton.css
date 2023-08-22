@@ -14,4 +14,6 @@
     margin-top: auto; 
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    border: 1px solid #667081;
+    border-bottom: none;
 }

@@ -11,6 +11,10 @@
     color: #26c17e;
 }
 
+.dark-mode .portfolio-to-search-container > .active {
+    color: #ffffff; 
+}
+
 .portfolio-to-search-container > span {
     color: #26c17e;
 }

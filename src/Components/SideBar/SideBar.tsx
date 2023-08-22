@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Button from "../Button/Button";
 import "./SideBar.css";
 
 interface SideBarProps {
@@ -59,21 +59,8 @@ export default function SideBar({ scrollToRef, refs }: SideBarProps) {
         </div>
       </ul>
       <div className="goback-container">
-        <Link className="go-back-link" to="/">
-          <button className="go-back-1">
-            <img
-              src="../src/assets/SideBar/Vector.png"
-              alt="icon to go back"
-            />
-            Go back
-          </button>
-          <button className="go-back-2">
-            <img
-              src="../src/assets/SideBar/Go back_2.png"
-              alt="icon to go back"
-            />
-          </button>
-        </Link>
+      <Button text="Go back" icon="../src/assets/SideBar/Vector.png" variant="goBack1" linkTo="/" />
+      <Button icon="../src/assets/SideBar/Go back_2.png" variant="goBack2" linkTo="/" />
       </div>
     </nav>
   );

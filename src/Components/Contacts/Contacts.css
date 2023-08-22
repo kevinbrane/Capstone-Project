@@ -36,6 +36,10 @@
     color: black;
 }
 
+.dark-mode .contact-link {
+    color: #ffffff;  /* Color blanco */
+}
+
 .contacts-info > div > div > span{
     font-size: 15px;
     font-family: 'Open Sans', sans-serif;

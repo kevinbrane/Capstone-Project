@@ -16,6 +16,10 @@
     background-color: #EEEEEE;
 }
 
+.feedback-info-container p {
+    color: #000;  /* Color negro */
+}
+
 .feedback-people-container {
     display: flex;
     align-items: center;

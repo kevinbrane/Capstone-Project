@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import SideBar from "../../Components/SideBar/SideBar"
+import SideBar from "../../Components/SideBar/SideBar";
 import MenuButton from "../../Components/MenuButton/MenuButton";
 import AboutMe from "../../Components/AboutMe/AboutMe";
 import Education from "../../Components/Education/Education";
@@ -31,6 +31,8 @@ export default function Inner() {
   };
 
   const [sideBarVisible, setSideBarVisible] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
+  const sliderLabel = darkMode ? "Light Mode" : "Dark Mode";
 
   const toggleSideBar = () => {
     setSideBarVisible(!sideBarVisible);
@@ -53,18 +55,27 @@ export default function Inner() {
         />
       )}
       <div
-        className={`inner-container ${
+        className={`inner-container ${darkMode ? "dark-mode" : ""} ${
           !sideBarVisible ? "margin-left-zero" : ""
         }`}
       >
+        <div className="theme-slider">
+        <h3 className="theme-title">{darkMode ? "LightMode" : "DarkMode"}</h3>
+          <input
+            type="checkbox"
+            id="darkModeToggle"
+            onChange={() => setDarkMode(!darkMode)}
+          />
+          <label htmlFor="darkModeToggle" className="slider"></label>
+        </div>
         <div
-          className={`menu-button-container ${
+          className={`menu-button-container ${darkMode ? "dark-mode" : ""} ${
             !sideBarVisible ? "left-zero" : ""
           }`}
         >
           <MenuButton toggleSideBar={toggleSideBar} />
         </div>
-        <div className="project-2-container">
+        <div className={`project-2-container ${darkMode ? "dark-mode" : ""}`}>
           <AboutMe ref={aboutMeRef} />
           <Education ref={educationRef} />
           <Experience ref={experienceRef} />
