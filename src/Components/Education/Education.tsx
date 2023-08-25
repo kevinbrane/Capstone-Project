@@ -1,10 +1,16 @@
 import React, { forwardRef } from "react";
-import { educationData } from "../../utils/constants";
 import "./Education.scss";
+import { useAppSelector } from "../../app/hooks";
 
-const Education: React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
+interface Props {
+ educationData: any,
+}
+
+const Education: React.ForwardRefRenderFunction<HTMLDivElement, Props> = ({educationData}, ref) => {
+
   return (
     <div className="education-container" ref={ref}>
+      
       <div>
         <h1 className="education-title">Education</h1>
       </div>
