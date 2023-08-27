@@ -37,11 +37,12 @@ const experienceData = [
 ];
 
 const skillData = [
-  { name: "HTML", percentage: "85%" },
+  
+  /* { name: "HTML", percentage: "85%" },
   { name: "CSS", percentage: "80%" },
   { name: "Javascript", percentage: "50%" },
   { name: "React", percentage: "70%" },
-  { name: "Typescript", percentage: "25%" },
+  { name: "Typescript", percentage: "25%" }, */ 
 ];
 
 export { aboutMeData, experienceData, skillData };

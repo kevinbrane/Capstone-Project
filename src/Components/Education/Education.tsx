@@ -1,21 +1,39 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useEffect } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import "./Education.scss";
-import { useAppSelector } from "../../app/hooks";
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import { fetchEducationData } from '../../features/education/educationSlice';
 
-interface Props {
- educationData: any,
-}
+interface Props {}
 
-const Education: React.ForwardRefRenderFunction<HTMLDivElement, Props> = ({educationData}, ref) => {
+const Education: React.ForwardRefRenderFunction<HTMLDivElement, Props> = (_, ref) => {
+  const dispatch = useAppDispatch();
+  const educations = useAppSelector((state) => state.education.educations);
+  const status = useAppSelector((state) => state.education.status);
+
+  useEffect(() => {
+    if (status === "idle" || educations.length === 0) {
+      dispatch(fetchEducationData());
+    }
+  }, [dispatch, status, educations.length]);
+
+  if (status === "loading" || status === "idle") {
+    return (
+      <div className="education-container" ref={ref}>
+        <h1 className="education-title">Education</h1>
+        <div className="spinner-container">
+          <FontAwesomeIcon icon={faSpinner} spin size="2x" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="education-container" ref={ref}>
-      
-      <div>
-        <h1 className="education-title">Education</h1>
-      </div>
+      <h1 className="education-title">Education</h1>
       <div className="education-data-container">
-        {educationData.map((edu) => (
+        {educations.map((edu) => (
           <div key={edu.id}>
             <div className="education-info-container">
               <div className="year-container">

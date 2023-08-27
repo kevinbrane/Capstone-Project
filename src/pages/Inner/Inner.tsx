@@ -9,9 +9,9 @@ import Portfolio from "../../Components/Portfolio/Portfolio";
 import Contacts from "../../Components/Contacts/Contacts";
 import Feedbacks from "../../Components/Feedbacks/Feedbacks";
 import GoUpButton from "../../Components/GoUpButton/GoUpButton";
-import "./Inner.scss";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { useAppDispatch } from "../../app/hooks";
 import { fetchEducationData } from "../../features/education/educationSlice";
+import "./Inner.scss";
 
 export default function Inner() {
   const aboutMeRef = useRef(null);
@@ -35,8 +35,6 @@ export default function Inner() {
   const [sideBarVisible, setSideBarVisible] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
   const dispatch = useAppDispatch();
-  const education = useAppSelector((state) => state.education.educations);
-  const status = useAppSelector((state) => state.education.status);
 
   const toggleSideBar = () => {
     setSideBarVisible(!sideBarVisible);
@@ -47,8 +45,6 @@ export default function Inner() {
     
     dispatch(fetchEducationData());
   }, [dispatch]);
-
-
 
   return (
     <>
@@ -89,7 +85,7 @@ export default function Inner() {
         </div>
         <div className={`project-2-container ${darkMode ? "dark-mode" : ""}`}>
           <AboutMe ref={aboutMeRef} />
-         {status==='loading'?  <div className="loading">Loading</div>:<Education ref={educationRef} educationData={education}/>}
+          <Education ref={educationRef} />
           <Experience ref={experienceRef} />
           <Skills ref={skillsRef} />
           <Portfolio ref={portfolioRef} />

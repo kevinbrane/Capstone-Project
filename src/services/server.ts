@@ -7,8 +7,12 @@ export default function startMockServer() {
       this.namespace = 'api';  // Prefijo para todos los endpoints
       // Endpoint para educations
       this.get('/educations', () => {
-        return educationData;
-      },);
+        return new Promise(resolve => {
+          setTimeout(() => {
+            resolve(educationData);
+          },3000);
+        });
+      });
 
       // Endpoint para obtener habilidades
       this.get('/skills', () => {

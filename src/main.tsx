@@ -6,6 +6,7 @@ import { store } from './app/store.ts';
 import App from './App.tsx';
 import './index.scss';
 
+
 startMockServer();
 
 const root = document.getElementById('root')!;

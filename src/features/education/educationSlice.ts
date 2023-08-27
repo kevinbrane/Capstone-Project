@@ -24,7 +24,7 @@ interface EducationState {
 }
 const initialState: EducationState = {
   educations: [],
-  status: null,
+  status: "idle",
 };
 
 const educationSlice = createSlice({

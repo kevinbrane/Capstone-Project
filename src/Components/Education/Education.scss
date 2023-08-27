@@ -9,6 +9,12 @@
     @include title-styles;
 }
 
+.spinner-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .education-data-container {
   max-height: 380px;
   overflow-y: auto;

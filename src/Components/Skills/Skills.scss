@@ -12,6 +12,28 @@
   @include title-styles;
 }
 
+.skills-title-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skills-title-container > button {
+  background-color: #222935;
+  height: 40px;
+  width: 103px;
+  color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  font-family: sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.skills-title-container > button:hover {
+  background-color: #26c17e;
+}
+
 .add-skill-container{
   display: flex;
   flex-direction: column;
@@ -69,6 +91,16 @@
   font-family: sans-serif;
   font-size: 16px;
   cursor: pointer;
+}
+
+.add-skill-btn:hover {
+  background-color: #26c17e;
+ }
+
+.add-skill-btn:disabled {
+  background-color: grey;
+  border-color: darkgrey;
+  cursor: not-allowed;
 }
 
 .skill-bar {
@@ -131,11 +163,11 @@
       }
 
       &:nth-child(2) {
-        left: 22%;
+        left: 21%;
       }
 
       &:nth-child(3) {
-        left: 80%;
+        left: 79.5%;
       }
 
       &:nth-child(4) {

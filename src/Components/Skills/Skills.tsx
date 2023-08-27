@@ -1,10 +1,29 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useState, useEffect } from "react";
 import { skillData } from "../../utils/constants";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useDispatch, useSelector } from "react-redux";
+import { addSkill, setSkills } from "../../features/skills/skillsSlice";
+import { RootState } from "../../app/store";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import "./Skills.scss";
 
 const Skills: React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
+  const skillsFromRedux = useSelector((state: RootState) => state.skills);
+  const dispatch = useDispatch();
+  const [isEditing, setIsEditing] = useState(false);
+
+  const toggleEditing = () => {
+    setIsEditing((prevIsEditing) => !prevIsEditing);
+  };
+
+  useEffect(() => {
+    // Al montar el componente, configurar el estado desde localStorage
+    const storedSkills = JSON.parse(localStorage.getItem("skills") || "[]");
+    dispatch(setSkills(storedSkills));
+  }, [dispatch]);
+
   const formik = useFormik({
     initialValues: {
       skillName: "",
@@ -19,66 +38,80 @@ const Skills: React.ForwardRefRenderFunction<HTMLDivElement> = (_, ref) => {
         .max(100, "Skill range must be less than or equal to 100"),
     }),
     onSubmit: (values) => {
-      console.log(values);
-      // Aquí puedes agregar la lógica para añadir la habilidad al estado
+      const newSkill = {
+        name: values.skillName,
+        percentage: `${values.skillRange}%`,
+      };
+      // Actualizar el estado global
+      dispatch(addSkill(newSkill));
+      // Almacenar en localStorage
+      const updatedSkills = [...skillsFromRedux, newSkill];
+      localStorage.setItem("skills", JSON.stringify(updatedSkills));
+      formik.resetForm();
     },
   });
 
   return (
     <div className="skills-container" ref={ref}>
-      <div>
+      <div className="skills-title-container">
         <h1 className="skills-title">Skills</h1>
+        <button onClick={toggleEditing}>
+          <FontAwesomeIcon icon={faEdit} />
+          {isEditing ? " Close edit" : " Open edit"}
+        </button>
       </div>
-      <div className="add-skill-container">
-        <form onSubmit={formik.handleSubmit}>
-          <div>
-            <span>Skill name:</span>
-            <input
-              type="text"
-              placeholder="Enter skill name"
-              name="skillName"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.skillName}
-              className={
-                formik.touched.skillName && formik.errors.skillName
-                  ? "input-error"
-                  : ""
-              }
-            />
-            {formik.touched.skillName && formik.errors.skillName ? (
-              <div className="error-message">{formik.errors.skillName}</div>
-            ) : null}
-          </div>
-          <div>
-            <span>Skill range:</span>
-            <input
-              type="text"
-              placeholder="Enter skill range"
-              name="skillRange"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.skillRange}
-              className={
-                formik.touched.skillRange && formik.errors.skillRange
-                  ? "input-error"
-                  : ""
-              }
-            />
-            {formik.touched.skillRange && formik.errors.skillRange ? (
-              <div className="error-message">{formik.errors.skillRange}</div>
-            ) : null}
-          </div>
-          <button
-            className="add-skill-btn"
-            type="submit"
-            disabled={!formik.isValid}
-          >
-            Add skill
-          </button>
-        </form>
-      </div>
-      {skillData.map((skill, index) => (
+      {isEditing && (
+        <div className="add-skill-container">
+          <form onSubmit={formik.handleSubmit}>
+            <div>
+              <span>Skill name:</span>
+              <input
+                type="text"
+                placeholder="Enter skill name"
+                name="skillName"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.skillName}
+                className={
+                  formik.touched.skillName && formik.errors.skillName
+                    ? "input-error"
+                    : ""
+                }
+              />
+              {formik.touched.skillName && formik.errors.skillName ? (
+                <div className="error-message">{formik.errors.skillName}</div>
+              ) : null}
+            </div>
+            <div>
+              <span>Skill range:</span>
+              <input
+                type="text"
+                placeholder="Enter skill range"
+                name="skillRange"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.skillRange}
+                className={
+                  formik.touched.skillRange && formik.errors.skillRange
+                    ? "input-error"
+                    : ""
+                }
+              />
+              {formik.touched.skillRange && formik.errors.skillRange ? (
+                <div className="error-message">{formik.errors.skillRange}</div>
+              ) : null}
+            </div>
+            <button
+              className="add-skill-btn"
+              type="submit"
+              disabled={!formik.isValid}
+            >
+              Add skill
+            </button>
+          </form>
+        </div>
+      )}
+      {skillsFromRedux.map((skill, index) => (
         <div className="skill-item" key={index}>
           <span className="skill-name">{skill.name}</span>
           <div className="skill-bar">
