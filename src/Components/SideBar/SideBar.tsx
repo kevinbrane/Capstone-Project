@@ -1,3 +1,4 @@
+import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser,faGraduationCap,faPencilAlt,faGem,faFolderOpen,faAddressBook,faComments} from '@fortawesome/free-solid-svg-icons';
 import PhotoBox from "../PhotoBox/PhotoBox";
