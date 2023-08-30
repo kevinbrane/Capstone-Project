@@ -1,17 +1,25 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-// Inicialización del estado a partir de localStorage o un array vacío.
-const initialState = JSON.parse(localStorage.getItem("skills") || "[]");
+let savedSkills = localStorage.getItem("skills");
+let parsedSkills = savedSkills ? JSON.parse(savedSkills) : [];
+
+// Garantizar que el estado inicial sea un array
+const initialState: { name: string; percentage: string }[] = Array.isArray(parsedSkills) ? parsedSkills : [];
 
 const skillsSlice = createSlice({
   name: "skills",
   initialState,
   reducers: {
     addSkill: (state, action: PayloadAction<{ name: string; percentage: string }>) => {
-      state.push(action.payload);
+      state.push(action.payload);  // Eliminado el chequeo Array.isArray(state)
     },
     setSkills: (state, action: PayloadAction<{ name: string; percentage: string }[]>) => {
-      return action.payload;
+      if (Array.isArray(action.payload)) {
+        return action.payload;
+      } else {
+        console.error('setSkills payload is not an array:', action.payload);
+        return state;
+      }
     },
   },
 });

@@ -28,6 +28,14 @@ const Education: React.ForwardRefRenderFunction<HTMLDivElement, Props> = (_, ref
       </div>
     );
   }
+  if (status === "failed") {
+    return (
+      <div className="education-container" ref={ref}>
+        <h1 className="education-title">Education</h1>
+        <p>Error loading education data.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="education-container" ref={ref}>

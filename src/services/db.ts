@@ -34,12 +34,5 @@ export const educationData = [
   ];
 
   export const skills = [
-  {
-    name: "JavaScript",
-    range: 5
-  },
-  {
-    name: "React",
-    range: 4
-  },
+  
 ];
