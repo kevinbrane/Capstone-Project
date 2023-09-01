@@ -1,3 +1,4 @@
+import React from 'react';
 import './MenuButton.scss';
 
 interface MenuButtonProps {

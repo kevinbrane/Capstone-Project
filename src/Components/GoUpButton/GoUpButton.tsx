@@ -1,3 +1,4 @@
+import React from 'react'
 import './GoUpButton.scss'
 
 export default function GoUpButton() {

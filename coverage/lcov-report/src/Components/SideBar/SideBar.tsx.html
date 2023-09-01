@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/8</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/8</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/8</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -122,11 +122,15 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -153,31 +157,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -191,7 +183,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser,faGraduationCap,faPencilAlt,faGem,faFolderOpen,faAddressBook,faComments} from '@fortawesome/free-solid-svg-icons';
+import {
+  faUser,
+  faGraduationCap,
+  faPencilAlt,
+  faGem,
+  faFolderOpen,
+  faAddressBook,
+  faComments
+} from '@fortawesome/free-solid-svg-icons';
 import PhotoBox from "../PhotoBox/PhotoBox";
 import Button from "../Button/Button";
 import "./SideBar.scss";
@@ -210,40 +210,28 @@ interface SideBarProps {
 }
 &nbsp;
 export default function SideBar({ scrollToRef, refs }: SideBarProps) {
+  const menuItems = [
+    { icon: faUser, text: 'About me', ref: refs.aboutMe },
+    { icon: faGraduationCap, text: 'Education', ref: refs.education },
+    { icon: faPencilAlt, text: 'Experience', ref: refs.experience },
+    { icon: faGem, text: 'Skills', ref: refs.skills },
+    { icon: faFolderOpen, text: 'Portfolio', ref: refs.portfolio },
+    { icon: faAddressBook, text: 'Contacts', ref: refs.contacts },
+    { icon: faComments, text: 'Feedback', ref: refs.feedbacks },
+  ];
+&nbsp;
   return (
     &lt;nav className="side-bar"&gt;
       &lt;div className="user-container"&gt;
         &lt;PhotoBox simple/&gt;
       &lt;/div&gt;
       &lt;ul&gt;
-        &lt;div onClick={() =&gt; scrollToRef(refs.aboutMe)}&gt;
-          &lt;FontAwesomeIcon icon={faUser} /&gt;
-          &lt;li&gt;About me&lt;/li&gt;
-        &lt;/div&gt;
-        &lt;div onClick={() =&gt; scrollToRef(refs.education)}&gt;
-          &lt;FontAwesomeIcon icon={faGraduationCap} /&gt;
-          &lt;li&gt;Education&lt;/li&gt;
-        &lt;/div&gt;
-        &lt;div onClick={() =&gt; scrollToRef(refs.experience)}&gt;
-          &lt;FontAwesomeIcon icon={faPencilAlt} /&gt;
-          &lt;li&gt;Experience&lt;/li&gt;
-        &lt;/div&gt;
-        &lt;div onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >scrollToRef(refs.skills)}</span>&gt;
-        &lt;FontAwesomeIcon icon={faGem} /&gt;
-          &lt;li&gt;Skills&lt;/li&gt;
-        &lt;/div&gt;
-        &lt;div onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >scrollToRef(refs.portfolio)}</span>&gt;
-          &lt;FontAwesomeIcon icon={faFolderOpen} /&gt;
-          &lt;li&gt;Portfolio&lt;/li&gt;
-        &lt;/div&gt;
-        &lt;div onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >scrollToRef(refs.contacts)}</span>&gt;
-          &lt;FontAwesomeIcon icon={faAddressBook} /&gt;
-          &lt;li&gt;Contacts&lt;/li&gt;
-        &lt;/div&gt;
-        &lt;div onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >scrollToRef(refs.feedbacks)}</span>&gt;
-          &lt;FontAwesomeIcon icon={faComments} /&gt;
-          &lt;li&gt;Feedback&lt;/li&gt;
-        &lt;/div&gt;
+        {menuItems.map((item, index) =&gt; (
+          &lt;div key={index} onClick={() =&gt; scrollToRef(item.ref)} data-testid={`menu-item-${item.text}`}&gt;
+            &lt;FontAwesomeIcon icon={item.icon} /&gt;
+            &lt;li&gt;{item.text}&lt;/li&gt;
+          &lt;/div&gt;
+        ))}
       &lt;/ul&gt;
       &lt;div className="goback-container"&gt;
         &lt;Button text="Go back" icon="../src/assets/SideBar/Vector.png" variant="goBack1" linkTo="/" /&gt;
@@ -259,7 +247,7 @@ export default function SideBar({ scrollToRef, refs }: SideBarProps) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-08-30T21:04:04.683Z
+                at 2023-09-01T17:49:09.517Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

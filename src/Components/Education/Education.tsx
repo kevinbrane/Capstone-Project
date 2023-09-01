@@ -13,10 +13,10 @@ const Education: React.ForwardRefRenderFunction<HTMLDivElement, Props> = (_, ref
   const status = useAppSelector((state) => state.education.status);
 
   useEffect(() => {
-    if (status === "idle" || educations.length === 0) {
+    if (status === "idle" || (educations && educations.length === 0)) {
       dispatch(fetchEducationData());
     }
-  }, [dispatch, status, educations.length]);
+  }, [dispatch, status, educations?.length]);
 
   if (status === "loading" || status === "idle") {
     return (

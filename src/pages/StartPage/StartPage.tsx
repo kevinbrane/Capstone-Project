@@ -1,6 +1,6 @@
 import Button from "../../Components/Button/Button";
 import PhotoBox from "../../Components/PhotoBox/PhotoBox";
-import { photoBoxData } from '../../utils/constants'; // Importa photoBoxData aquí
+import { photoBoxData } from '../../utils/constants';
 import "./StartPage.scss";
 
 export default function StartPage() {
